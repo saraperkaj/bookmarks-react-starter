@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useParams, useHistory, withRouter } from "react-router-dom";
 
 function BookmarkDetails(props) {
   const { deleteBookmark } = props;
@@ -45,4 +45,4 @@ function BookmarkDetails(props) {
   );
 }
 
-export default BookmarkDetails;
+export default withRouter(BookmarkDetails);
