@@ -23,16 +23,16 @@ function App() {
               <Home />
             </Route>
             <Route exact path="/bookmarks">
-              <Index bookmarks={bookmarks} />
+              <Index />
             </Route>
             <Route path="/bookmarks/new">
-              <New addBookmark={addBookmark} />
+              <New />
             </Route>
             <Route exact path="/bookmarks/:index">
-              <Show bookmarks={bookmarks} deleteBookmark={deleteBookmark} />
+              <Show />
             </Route>
             <Route path="/bookmarks/:index/edit">
-              <Edit bookmarks={bookmarks} updateBookmark={updateBookmark} />
+              <Edit />
             </Route>
             <Route path="*">
               <FourOFour />

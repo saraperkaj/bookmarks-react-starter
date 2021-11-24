@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Bookmark from "./Bookmark";
 
 function Bookmarks() {
