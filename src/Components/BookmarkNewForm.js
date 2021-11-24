@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useHistory, withRouter } from "react-router-dom";
+import axios from "axios";
+import { apiURL } from "../util/apiURL";
 
+const API = apiURL();
 function BookmarkNewForm() {
   let history = useHistory();
 
@@ -12,6 +15,17 @@ function BookmarkNewForm() {
     description: "",
   });
 
+  const addBookmark = (newBookmark) => {
+    axios
+      .post(`${API}/bookmarks`, newBookmark)
+      .then(
+        () => {
+          history.push(`/bookmarks`);
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn("catch", c));
+  };
   const handleTextChange = (event) => {
     setBookmark({ ...bookmark, [event.target.id]: event.target.value });
   };

@@ -1,10 +1,10 @@
 import BookmarkNewForm from "../Components/BookmarkNewForm";
 
-function New({ addBookmark }) {
+function New() {
   return (
     <div className="New">
       <h2>New</h2>
-      <BookmarkNewForm addBookmark={addBookmark} />
+      <BookmarkNewForm />
     </div>
   );
 }

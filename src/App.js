@@ -1,7 +1,4 @@
 // DEPENDENCIES
-import { apiURL } from "./util/apiURL";
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // PAGES
@@ -15,24 +12,7 @@ import Show from "./Pages/Show";
 // COMPONENTS
 import NavBar from "./Components/NavBar";
 
-// further down..., but still above `App` component
-const API = apiURL();
-
 function App() {
-  const [bookmarks, setBookmarks] = useState([]);
-
-  const addBookmark = (newBookmark) => {};
-  const deleteBookmark = (index) => {};
-  const updateBookmark = (updatedBookmark, index) => {};
-  useEffect(() => {
-    axios
-      .get(`${API}/bookmarks`)
-      .then(
-        (response) => setBookmarks(response.data),
-        (error) => console.log("get", error)
-      )
-      .catch((c) => console.warn("catch", c));
-  }, []);
   return (
     <div className="App">
       <Router>
