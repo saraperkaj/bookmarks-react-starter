@@ -1,8 +1,10 @@
-function New() {
+import Bookmarks from "../Components/Bookmarks";
+
+function Index() {
   return (
-    <div className="New">
-      <h2>Welcome</h2>
-      <h3>To the greatest bookmarks app!</h3>
+    <div className="Index">
+      <h2>Index</h2>
+      <Bookmarks />
     </div>
   );
 }
