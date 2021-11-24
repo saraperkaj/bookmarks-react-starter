@@ -1,10 +1,10 @@
 import Bookmarks from "../Components/Bookmarks";
 
-function Index({ bookmarks }) {
+function Index() {
   return (
     <div className="Index">
       <h2>Index</h2>
-      <Bookmarks bookmarks={bookmarks} />
+      <Bookmarks />
     </div>
   );
 }

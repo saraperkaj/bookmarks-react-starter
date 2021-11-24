@@ -1,6 +1,7 @@
 import Bookmark from "./Bookmark";
 
-function Bookmarks({ bookmarks }) {
+function Bookmarks() {
+  const [bookmarks, setBookmarks] = useState([]);
   return (
     <div className="Bookmarks">
       <section>

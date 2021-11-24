@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useHistory, withRouter } from "react-router-dom";
 
-function BookmarkDetails(props) {
-  const { deleteBookmark } = props;
+function BookmarkDetails() {
   const [bookmark, setBookmark] = useState([]);
   let { index } = useParams();
-  let history = useHistory();
 
   useEffect(() => {}, []);
   const handleDelete = () => {};

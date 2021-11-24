@@ -1,6 +1,4 @@
 // DEPENDENCIES
-
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // PAGES
@@ -15,12 +13,6 @@ import Show from "./Pages/Show";
 import NavBar from "./Components/NavBar";
 
 function App() {
-  const [bookmarks, setBookmarks] = useState([]);
-
-  const addBookmark = (newBookmark) => {};
-  const deleteBookmark = (index) => {};
-  const updateBookmark = (updatedBookmark, index) => {};
-  useEffect(() => {}, []);
   return (
     <div className="App">
       <Router>
