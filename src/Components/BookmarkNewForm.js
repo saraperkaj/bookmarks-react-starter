@@ -12,6 +12,7 @@ function BookmarkNewForm() {
     description: "",
   });
 
+  const addBookmark = (bookmark) => {};
   const handleTextChange = (event) => {
     setBookmark({ ...bookmark, [event.target.id]: event.target.value });
   };
