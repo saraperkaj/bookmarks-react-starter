@@ -26,7 +26,6 @@ function BookmarkEditForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.updateBookmark(bookmark, index);
-    history.push(`/bookmarks/${index}`);
   };
   return (
     <div className="Edit">
