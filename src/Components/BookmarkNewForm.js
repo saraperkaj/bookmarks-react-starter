@@ -19,8 +19,12 @@ function BookmarkNewForm() {
     axios
       .post(`${API}/bookmarks`, newBookmark)
       .then(
-        () => {
-          history.push(`/bookmarks`);
+        (response) => {
+          if (response.status === 200) {
+            history.push(`/bookmarks`);
+          } else {
+            console.log("go fuck yourself");
+          }
         },
         (error) => console.error(error)
       )

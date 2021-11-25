@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, useHistory } from "react-router-dom";
+import { useParams, Link, useHistory, withRouter } from "react-router-dom";
+import axios from "axios";
+
+import { apiURL } from "../util/apiURL";
+
+const API = apiURL();
 
 function BookmarkEditForm(props) {
   let { index } = useParams();
@@ -21,12 +26,31 @@ function BookmarkEditForm(props) {
     setBookmark({ ...bookmark, isFavorite: !bookmark.isFavorite });
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    axios.get(`${API}/bookmarks/${index}`).then(
+      (response) =>
+        setBookmark(() => {
+          return response.data;
+        }),
+      (error) => history.push(`/not-found`)
+    );
+  }, [index, history]);
 
+  const updateBookmark = (updatedBookmark, index) => {
+    axios
+      .put(`${API}/bookmarks/${index}`, updatedBookmark)
+      .then(
+        (response) => {
+          setBookmark(response.data);
+          history.push(`/bookmarks/${index}`);
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn("catch", c));
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.updateBookmark(bookmark, index);
-    history.push(`/bookmarks/${index}`);
+    updateBookmark(bookmark, index);
   };
   return (
     <div className="Edit">
@@ -85,4 +109,4 @@ function BookmarkEditForm(props) {
   );
 }
 
-export default BookmarkEditForm;
+export default withRouter(BookmarkEditForm);

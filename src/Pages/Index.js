@@ -9,4 +9,4 @@ function Index() {
   );
 }
 
-export default New;
+export default Index;

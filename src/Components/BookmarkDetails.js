@@ -4,8 +4,9 @@ import axios from "axios";
 import { apiURL } from "../util/apiURL";
 
 const API = apiURL();
-function BookmarkDetails(props) {
-  const { deleteBookmark } = props;
+function BookmarkDetails() {
+  const history = useHistory();
+
   const [bookmark, setBookmark] = useState([]);
   let { index } = useParams();
 
@@ -19,7 +20,17 @@ function BookmarkDetails(props) {
       }
     );
   }, [index, history]);
-  const handleDelete = () => {};
+  const handleDelete = () => {
+    axios
+      .delete(`${API}/bookmarks/${index}`)
+      .then(
+        () => {
+          history.push(`/bookmarks`);
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn("catch", c));
+  };
   return (
     <article>
       <h3>
