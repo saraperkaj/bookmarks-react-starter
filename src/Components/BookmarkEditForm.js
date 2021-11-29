@@ -6,7 +6,7 @@ import { apiURL } from "../util/apiURL";
 
 const API = apiURL();
 
-function BookmarkEditForm(props) {
+function BookmarkEditForm() {
   let history = useHistory();
   let { index } = useParams();
 
@@ -30,7 +30,6 @@ function BookmarkEditForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.updateBookmark(bookmark, index);
   };
   return (
     <div className="Edit">
