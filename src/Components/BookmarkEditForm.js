@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useState, useEffect, useHistory } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, Link, useHistory } from "react-router-dom";
 
 import { apiURL } from "../util/apiURL";
 
