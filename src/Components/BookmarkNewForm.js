@@ -1,5 +1,9 @@
+import axios from "axios";
 import { useState } from "react";
 import { withRouter } from "react-router-dom";
+import { apiURL } from "../util/apiURL";
+
+const API = apiURL();
 
 function BookmarkNewForm() {
   const [bookmark, setBookmark] = useState({
