@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { useHistory, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 function BookmarkNewForm() {
-  let history = useHistory();
-
   const [bookmark, setBookmark] = useState({
     name: "",
     url: "",
@@ -24,7 +22,6 @@ function BookmarkNewForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     addBookmark(bookmark);
-    history.push("/bookmarks");
   };
   return (
     <div className="New">

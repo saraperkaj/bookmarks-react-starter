@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link, useParams, useHistory, withRouter } from "react-router-dom";
+import { Link, useParams, withRouter } from "react-router-dom";
 
 function BookmarkDetails() {
-  const [bookmark, setBookmark] = useState([]);
+  const [bookmark] = useState([]);
   let { index } = useParams();
 
   useEffect(() => {}, []);

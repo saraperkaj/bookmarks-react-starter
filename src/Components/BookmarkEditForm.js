@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, useHistory } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function BookmarkEditForm(props) {
   let { index } = useParams();
-  let history = useHistory();
 
   const [bookmark, setBookmark] = useState({
     name: "",
