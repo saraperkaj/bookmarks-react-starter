@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Bookmark from "./Bookmark";
 
-function Bookmarks({ bookmarks }) {
+function Bookmarks() {
+  const [bookmarks] = useState([]);
   return (
     <div className="Bookmarks">
       <section>

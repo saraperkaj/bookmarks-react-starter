@@ -1,6 +1,4 @@
 // DEPENDENCIES
-
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // PAGES
@@ -15,12 +13,6 @@ import Show from "./Pages/Show";
 import NavBar from "./Components/NavBar";
 
 function App() {
-  const [bookmarks, setBookmarks] = useState([]);
-
-  const addBookmark = (newBookmark) => {};
-  const deleteBookmark = (index) => {};
-  const updateBookmark = (updatedBookmark, index) => {};
-  useEffect(() => {}, []);
   return (
     <div className="App">
       <Router>
@@ -31,16 +23,16 @@ function App() {
               <Home />
             </Route>
             <Route exact path="/bookmarks">
-              <Index bookmarks={bookmarks} />
+              <Index />
             </Route>
             <Route path="/bookmarks/new">
-              <New addBookmark={addBookmark} />
+              <New />
             </Route>
             <Route exact path="/bookmarks/:index">
-              <Show bookmarks={bookmarks} deleteBookmark={deleteBookmark} />
+              <Show />
             </Route>
             <Route path="/bookmarks/:index/edit">
-              <Edit bookmarks={bookmarks} updateBookmark={updateBookmark} />
+              <Edit />
             </Route>
             <Route path="*">
               <FourOFour />

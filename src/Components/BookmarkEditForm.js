@@ -1,9 +1,14 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 
-function BookmarkEditForm(props) {
-  let { index } = useParams();
+import { apiURL } from "../util/apiURL";
+
+const API = apiURL();
+
+function BookmarkEditForm() {
   let history = useHistory();
+  let { index } = useParams();
 
   const [bookmark, setBookmark] = useState({
     name: "",
@@ -25,8 +30,6 @@ function BookmarkEditForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.updateBookmark(bookmark, index);
-    history.push(`/bookmarks/${index}`);
   };
   return (
     <div className="Edit">
