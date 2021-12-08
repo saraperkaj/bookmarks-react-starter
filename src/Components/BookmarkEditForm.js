@@ -1,13 +1,7 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, Link, useHistory } from "react-router-dom";
-
-import { apiURL } from "../util/apiURL";
-
-const API = apiURL();
+import { useParams, Link } from "react-router-dom";
 
 function BookmarkEditForm() {
-  let history = useHistory();
   let { index } = useParams();
 
   const [bookmark, setBookmark] = useState({

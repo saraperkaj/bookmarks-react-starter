@@ -1,12 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
-import { withRouter, useHistory } from "react-router-dom";
-import { apiURL } from "../util/apiURL";
-
-const API = apiURL();
 
 function BookmarkNewForm() {
-  let history = useHistory();
   const [bookmark, setBookmark] = useState({
     name: "",
     url: "",
@@ -81,4 +75,4 @@ function BookmarkNewForm() {
   );
 }
 
-export default withRouter(BookmarkNewForm);
+export default BookmarkNewForm;

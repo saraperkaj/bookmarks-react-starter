@@ -1,5 +1,5 @@
 // DEPENDENCIES
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // PAGES
 import Edit from "./Pages/Edit";
@@ -18,26 +18,14 @@ function App() {
       <Router>
         <NavBar />
         <main>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/bookmarks">
-              <Index />
-            </Route>
-            <Route path="/bookmarks/new">
-              <New />
-            </Route>
-            <Route exact path="/bookmarks/:index">
-              <Show />
-            </Route>
-            <Route path="/bookmarks/:index/edit">
-              <Edit />
-            </Route>
-            <Route path="*">
-              <FourOFour />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/bookmarks" element={<Index />} />
+            <Route path="/bookmarks/new" element={<New />} />
+            <Route path="/bookmarks/:index" element={<Show />} />
+            <Route path="/bookmarks/:index/edit" element={<Edit />} />
+            <Route path="*" element={<FourOFour />} />
+          </Routes>
         </main>
       </Router>
     </div>
